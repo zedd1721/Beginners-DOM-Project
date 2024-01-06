@@ -17,10 +17,13 @@ function randomColors(){
 
 start.addEventListener('click', function(){
     console.log('Start Button Clicked');
-    myInterval = setInterval(randomColors, 1000);
+    if(myInterval === null){
+        myInterval = setInterval(randomColors, 1000);
+    }
 });
 
 stop.addEventListener('click', function(){
     console.log('Stop button clicked');
     clearInterval(myInterval);
+    myInterval = null;
 });
